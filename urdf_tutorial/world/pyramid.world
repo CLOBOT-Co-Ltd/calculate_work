@@ -1,0 +1,286 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="custom_world">
+    <!-- Include the ground plane and a sun for lighting -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>21.0 -21.0 14.0 0 0.3 2.348</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+
+    <!-- 박스 1 -->
+    <model name="box_1">
+      <static>true</static>
+      <pose>-2 0 0.5 0 0 0</pose> <!-- Centered at (-2, 0), height at 0.5m -->
+      <link name="box_1_link">
+        <collision name="box_1_collision">
+          <geometry>
+            <box>
+              <size>6.5 10 1</size> <!-- 6m x 10m x 1m -->
+            </box>
+          </geometry>
+        </collision>
+        <visual name="box_1_visual">
+          <geometry>
+            <box>
+              <size>6.5 10 1</size> <!-- 6m x 10m x 1m -->
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ground/materials/scripts</uri>
+              <uri>model://ground/materials/textures/</uri>
+              <name>Ground/Image</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- 박스 2 -->
+    <model name="box_2">
+      <static>true</static>
+      <pose>3.125 3 0.5 0 0 0</pose> <!-- Centered at (3, 3), height at 0.5m -->
+      <link name="box_2_link">
+        <collision name="box_2_collision">
+          <geometry>
+            <box>
+              <size>4 4.5 1</size> <!-- 4m x 4m x 1m -->
+            </box>
+          </geometry>
+        </collision>
+        <visual name="box_2_visual">
+          <geometry>
+            <box>
+              <size>4 4.5 1</size> <!-- 4m x 4m x 1m -->
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ground/materials/scripts</uri>
+              <uri>model://ground/materials/textures/</uri>
+              <name>Ground/Image</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- 박스 3 -->
+    <model name="box_3">
+      <static>true</static>
+      <pose>3.125 -3 0.5 0 0 0</pose> <!-- Centered at (3, -3), height at 0.5m -->
+      <link name="box_3_link">
+        <collision name="box_3_collision">
+          <geometry>
+            <box>
+              <size>4 4.5 1</size> <!-- 4m x 4m x 1m -->
+            </box>
+          </geometry>
+        </collision>
+        <visual name="box_3_visual">
+          <geometry>
+            <box>
+              <size>4 4.5 1</size> <!-- 4m x 4m x 1m -->
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ground/materials/scripts</uri>
+              <uri>model://ground/materials/textures/</uri>
+              <name>Ground/Image</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- 박스 4 -->
+    <model name="box_4">
+      <static>true</static>
+      <pose>3.75 0 0.5 0 0 0</pose> <!-- Centered at (4, 0), height at 0.5m -->
+      <link name="box_4_link">
+        <collision name="box_4_collision">
+          <geometry>
+            <box>
+              <size>2 1.5 1</size> <!-- 2m x 2m x 1m -->
+            </box>
+          </geometry>
+        </collision>
+        <visual name="box_4_visual">
+          <geometry>
+            <box>
+              <size>2 1.5 1</size> <!-- 2m x 2m x 1m -->
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ground/materials/scripts</uri>
+              <uri>model://ground/materials/textures/</uri>
+              <name>Ground/Image</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- 피라미드 박스 1 (가장 아래층, 높이 1m) -->
+    <model name="pyramid_box_1">
+      <static>true</static>
+      <pose>2 0 0.4 0 0 0</pose> <!-- Centered at (2, 0), base at 0m, height at 1m -->
+      <link name="pyramid_box_1_link">
+        <collision name="pyramid_box_1_collision">
+          <geometry>
+            <box>
+              <size>1.5 1.5 0.8</size> <!-- 2m x 2m x 1m -->
+            </box>
+          </geometry>
+        </collision>
+        <visual name="pyramid_box_1_visual">
+          <geometry>
+            <box>
+              <size>1.5 1.5 0.8</size> <!-- 2m x 2m x 1m -->
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ground/materials/scripts</uri>
+              <uri>model://ground/materials/textures/</uri>
+              <name>Ground/Image</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- 피라미드 박스 2 (중간 아래층) -->
+    <model name="pyramid_box_2">
+      <static>true</static>
+      <pose>2 0 1.25 0 0 0</pose> <!-- Centered at (2, 0), base at 1m, height at 0.3m -->
+      <link name="pyramid_box_2_link">
+        <collision name="pyramid_box_2_collision">
+          <geometry>
+            <box>
+              <size>1.5 1.5 0.5</size> 
+            </box>
+          </geometry>
+        </collision>
+        <visual name="pyramid_box_2_visual">
+          <geometry>
+            <box>
+              <size>1.5 1.5 0.5</size> 
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ground/materials/scripts</uri>
+              <uri>model://ground/materials/textures/</uri>
+              <name>Ground/Image</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- 피라미드 박스 3 (중간 위층) -->
+    <model name="pyramid_box_3">
+      <static>true</static>
+      <pose>2 0 1.65 0 0 0</pose> <!-- Centered at (2, 0), base at 1.3m, height at 0.3m -->
+      <link name="pyramid_box_3_link">
+        <collision name="pyramid_box_3_collision">
+          <geometry>
+            <box>
+              <size>1 1 0.3</size> <!-- 1m x 1m x 0.2m -->
+            </box>
+          </geometry>
+        </collision>
+        <visual name="pyramid_box_3_visual">
+          <geometry>
+            <box>
+              <size>1 1 0.3</size> <!-- 1m x 1m x 0.2m -->
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ground/materials/scripts</uri>
+              <uri>model://ground/materials/textures/</uri>
+              <name>Ground/Image</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+    <!-- 피라미드 박스 4 (가장 위층) -->
+    <model name="pyramid_box_4">
+      <static>true</static>
+      <pose>2 0 1.9 0 0 0</pose> <!-- Centered at (2, 0), base at 1.5m, height at 0.1m -->
+      <link name="pyramid_box_4_link">
+        <collision name="pyramid_box_4_collision">
+          <geometry>
+            <box>
+              <size>0.5 0.5 0.2</size> <!-- 0.5m x 0.5m x 0.1m -->
+            </box>
+          </geometry>
+        </collision>
+        <visual name="pyramid_box_4_visual">
+          <geometry>
+            <box>
+              <size>0.5 0.5 0.2</size> <!-- 0.5m x 0.5m x 0.1m -->
+            </box>
+          </geometry>
+          <material>
+            <script>
+              <uri>model://ground/materials/scripts</uri>
+              <uri>model://ground/materials/textures/</uri>
+              <name>Ground/Image</name>
+            </script>
+            <ambient>1 1 1 1</ambient>
+            <diffuse>1 1 1 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+            <emissive>0 0 0 1</emissive>
+          </material>
+        </visual>
+      </link>
+    </model>
+
+
+  </world>
+</sdf>
