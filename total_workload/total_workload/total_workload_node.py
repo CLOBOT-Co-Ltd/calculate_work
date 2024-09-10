@@ -89,7 +89,7 @@ class PointCloudSubscriber(Node):
         start = time.time()
         current_workload = 0.0
         xmin, xmax, ymin, ymax, zmin, zmax = -2.5, 2.5, -2.5, 2.5, -2, 5
-        x_split = y_split = 0.1 # value: 0.5, 0.1, 0.07 ...
+        x_split = y_split = 0.5 # value: 0.5, 0.1, 0.07 ...
         z_split = 0.5
 
         x_offset = 2.0
